@@ -1,0 +1,298 @@
+@font-face {
+  font-family: "OPTIMacBethOldStyle";
+  src: url("/fonts/OPTIMacBethOldStyle.otf");
+  font-weight: 400;
+}
+
+html,
+body {
+  overscroll-behavior-y: none;
+}
+
+body {
+  margin: 0;
+  font-family: "OPTIMacBethOldStyle";
+  font-style: normal;
+  background: black;
+  color: #b93e28;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* overflow: hidden; */
+  /* cursor: none; TODO: ask if cursor should be hidden? */
+}
+
+/* TODO: check if these classes need to be used */
+.hide-scrollbars {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+}
+
+.hide-scrollbars::-webkit-scrollbar {
+  background: transparent; /* Chrome/Safari/Webkit */
+  width: 0px;
+}
+
+.no-highlight {
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-text-select: none;
+  -webkit-user-select: none;
+}
+
+.cover {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+}
+
+.hidden {
+  display: none !important;
+  /* opacity: 0; */
+}
+
+.bg-img-contain-center {
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.main-container {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  background: black;
+  z-index: 10;
+}
+.main-container.loading {
+  pointer-events: none;
+}
+
+/* Button animation */
+
+.btx-animation {
+  transform-origin: center center;
+  transition: transform 250ms cubic-bezier(0.33, 0, 0, 1) 0s;
+}
+.btx-animation:hover {
+  transform: scale(1.1);
+}
+.btx-animation:active {
+  transform: scale(0.85);
+  transition: transform 134ms cubic-bezier(0.45, 0, 0.2, 1) 0s;
+}
+
+.btx-animation-smaller {
+  transform-origin: center center;
+  transition: transform 250ms cubic-bezier(0.33, 0, 0, 1) 0s;
+}
+.btx-animation-smaller:hover {
+  transform: scale(1.03);
+}
+.btx-animation-smaller:active {
+  transform: scale(0.95);
+  transition: transform 134ms cubic-bezier(0.45, 0, 0.2, 1) 0s;
+}
+
+/* Loading Screen */
+
+.loading-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: black;
+}
+.loading-text-white {
+  color: #b93e28;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: -3.2px;
+  text-transform: uppercase;
+  user-select: none;
+}
+
+/* Main Screen */
+
+.logo {
+  pointer-events: auto;
+  cursor: pointer;
+  position: fixed;
+
+  width: 104px;
+  height: 104px;
+  top: 30px;
+  left: 39px;
+}
+
+.twitter-icon {
+  pointer-events: auto;
+  cursor: pointer;
+  position: fixed;
+
+  width: 32px;
+  height: 32px;
+  bottom: 48px;
+  left: 48px;
+}
+
+.sound-control {
+  pointer-events: auto;
+  cursor: pointer;
+  position: fixed;
+
+  width: 32px;
+  height: 32px;
+  bottom: 48px;
+  right: 48px;
+}
+.sound-control > div {
+  width: 100%;
+  height: 100%;
+}
+
+.main-screen {
+  background: black;
+
+  pointer-events: none;
+  user-select: none;
+}
+.bg-center-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: black;
+}
+.bg-container {
+  transform: scale(0.4);
+}
+.bg-container > div.img-bg {
+  position: relative;
+  width: 4095px;
+  height: 8241px;
+  background-repeat: no-repeat;
+}
+
+.bg-item {
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+.bg-item.highlight {
+  filter: drop-shadow(2.5px 2.5px 5px #b93e28);
+}
+
+.spotlight {
+  pointer-events: auto;
+  position: absolute;
+  top: 0;
+  right: -1px;
+  bottom: 0;
+  left: -1px;
+
+  background-image: radial-gradient(
+    circle,
+    transparent 116px,
+    rgba(0, 0, 0, 0.93) 146px
+  );
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.spotlight.dragging {
+  cursor: grabbing;
+}
+
+/* Main - Enter Screen */
+
+.enter-overlay {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 200px;
+}
+.enter-black-hand-img {
+  width: 256px;
+  height: 256px;
+}
+.enter-title {
+  text-align: center;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 68px;
+  letter-spacing: -3.2px;
+  text-transform: uppercase;
+  user-select: none;
+
+  margin-top: 2px;
+  padding: 0px 32px;
+}
+.enter-instructions-desktop {
+  text-align: center;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 32px; /* 133.333% */
+  letter-spacing: -1.92px;
+  text-transform: uppercase;
+  user-select: none;
+}
+.enter-instructions-mobile {
+  text-align: center;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 32px; /* 133.333% */
+  letter-spacing: -1.92px;
+  text-transform: uppercase;
+  user-select: none;
+
+  margin-top: 16px;
+  display: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .logo {
+    top: 8px;
+    left: 15px;
+  }
+  .twitter-icon {
+    bottom: 24px;
+    left: 24px;
+  }
+  .sound-control {
+    bottom: 24px;
+    right: 24px;
+  }
+  .enter-overlay {
+    padding-bottom: 150px;
+  }
+  .enter-title {
+    line-height: 40px;
+    margin-top: 9px;
+  }
+  .enter-instructions-mobile {
+    display: block;
+  }
+  .enter-instructions-desktop {
+    display: none;
+  }
+}

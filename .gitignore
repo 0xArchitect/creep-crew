@@ -1,0 +1,9 @@
+node_modules/
+/.pnp
+.pnp.js
+.env
+.swc
+.next
+.history
+*.tsbuildinfo
+docs
