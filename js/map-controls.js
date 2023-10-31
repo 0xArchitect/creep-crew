@@ -24,7 +24,7 @@ const DEFAULT_SPOTLIGHT_DIAMETER = 292; // px
 const FOCUSED_SPOTLIGHT_SIZE_FACTOR = 0.75;
 const DEFAULT_SPOTLIGHT_INSET_FACTOR = 160 / 200;
 const FOCUSED_SPOTLIGHT_INSET_FACTOR = 130 / 150;
-const DEFAULT_SPOTLIGHT_OPACITY = 0.85;
+const DEFAULT_SPOTLIGHT_OPACITY = 0.93;
 const FOCUSED_SPOTLIGHT_OPACITY = 0.98;
 const SPOTLIGHT_ZOOM_FACTOR = 0.5;
 const SPOTLIGHT_ENTER_ANIMATION_DURATION = 300;
@@ -242,7 +242,7 @@ class CreepMapControls {
     this._$bg.css(
       "transform",
       `translate(${this._bgTranslate.x}px, ${
-        this._bgTranslate.y
+        Math.min(575, this._bgTranslate.y)
       }px) scale(${this._bgScale.toFixed(3)})`
     );
 
@@ -336,7 +336,7 @@ class CreepMapControls {
     );
     const maxY = Math.max(
       0,
-      Math.floor((this._bgHeight * this._bgScale - winHeight) / 2)
+      Math.floor(((this._bgHeight) * this._bgScale - winHeight) / 2)
     );
 
     this._bgMaxTranslate = { x: maxX, y: maxY };
