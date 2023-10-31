@@ -24,7 +24,7 @@ const DEFAULT_SPOTLIGHT_DIAMETER = 292; // px
 const FOCUSED_SPOTLIGHT_SIZE_FACTOR = 0.75;
 const DEFAULT_SPOTLIGHT_INSET_FACTOR = 160 / 200;
 const FOCUSED_SPOTLIGHT_INSET_FACTOR = 130 / 150;
-const DEFAULT_SPOTLIGHT_OPACITY = 0.93;
+const DEFAULT_SPOTLIGHT_OPACITY = 0.85;
 const FOCUSED_SPOTLIGHT_OPACITY = 0.98;
 const SPOTLIGHT_ZOOM_FACTOR = 0.5;
 const SPOTLIGHT_ENTER_ANIMATION_DURATION = 300;
@@ -70,6 +70,7 @@ class CreepMapControls {
 
   _loadBgItems() {
     const _controls = this;
+
     this._$bg.find(".bg-item").each(function () {
       const jqEl = $(this);
 
@@ -89,6 +90,28 @@ class CreepMapControls {
         },
       });
     });
+    
+    this._$bg.find(".item").each(function () {
+      const jqEl = $(this);
+
+      const top = parseInt(jqEl.css("top"));
+      const left = parseInt(jqEl.css("left"));
+      const width = parseInt(jqEl.css("width"));
+      const height = parseInt(jqEl.css("height"));
+
+      _controls._bgItems.push({
+        el: this,
+        jqEl,
+        box: {
+          top: top,
+          left: left,
+          bottom: top + height,
+          right: left + width,
+        },
+      });
+    });
+
+
   }
 
   initBackground() {
