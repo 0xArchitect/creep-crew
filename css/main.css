@@ -202,7 +202,6 @@ body {
 
 .item {
   position: absolute;
-  isolation: isolate;
 }
 
 .item img {
@@ -212,7 +211,6 @@ body {
 .item #glow {
   position: absolute;
   inset: -33px -33px;
-  z-index: 10;
   
   opacity: 0;
 }
@@ -238,6 +236,15 @@ body {
   transition: opacity 0.3s ease-in-out;
 
   z-index: 100;
+}
+
+.tool-tip h1 {
+  text-transform: uppercase;
+}
+
+.tool-tip p {
+  margin-top: 1rem;
+  font-size: 2rem;
 }
 
 .tool-tip#top {

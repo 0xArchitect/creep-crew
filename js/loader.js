@@ -1,5 +1,5 @@
 const CREEP_RESOURCES = {
-  "img-bg": { type: "image", url: "./images/bg-new.webp" },
+  "img-bg": { type: "image", url: "./images/bg-new.jpg" },
   "img-black-hand": { type: "image", url: "./images/black-hand.png" },
   "img-logo": { type: "image", url: "./images/logo.png" },
   "img-logo-gray": { type: "image", url: "./images/logo-gray-1800.png" },
