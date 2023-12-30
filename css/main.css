@@ -269,7 +269,7 @@ body {
 }
 
 .item.highlight .tool-tip {
-  opacity: 1;
+  /* opacity: 1; */
 }
 
 .teeth {
